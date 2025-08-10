@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="id"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Roblox Community Indonesia (RCI) 🇮🇩</title> <!-- Favicon --> 
+  <link rel="icon" href="https://i.imgur.com/8VoqbeV.jpeg" sizes="any"> 
+  <link rel="apple-touch-icon" href="https://i.imgur.com/8VoqbeV.jpeg"> <!-- Open Graph / WhatsApp Thumbnail Meta Tags --> 
+  <meta property="og:title" content="Roblox Community Indonesia (RCI) 🇮🇩"> 
+  <meta property="og:description" content="Komunitas Roblox Indonesia yang sopan, damai, dan kreatif! Join sekarang!"> 
+  <meta property="og:image" content="https://i.imgur.com/8VoqbeV.jpeg"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="og:url" content="https://z4tweb.neocities.org/"> 
+  <meta property="og:type" content="website"> 
+  <meta property="og:site_name" content="RCI Community"> <!-- Twitter Card Meta Tags --> 
+  <meta name="twitter:card" content="summary_large_image"> 
+  <meta name="twitter:title" content="Roblox Community Indonesia (RCI) 🇮🇩"> 
+  <meta name="twitter:description" content="Komunitas Roblox Indonesia yang sopan, damai, dan kreatif! Join sekarang!"> 
+  <meta name="twitter:image" content="https://i.imgur.com/8VoqbeV.jpeg"> 
+  <style>
+        :root {
+            --primary-color: #4fc3f7;
+            --secondary-color: #81c784;
+            --accent-color: #bb86fc;
+            --text-color: #e0e0e0;
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --border-color: #333;
+            --rating-color: #FFD700;
+        }
+        
+        [data-theme="light"] {
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-color: #ffffff;
+            --border-color: #ddd;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: var(--card-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .settings-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .theme-switch {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border-color);
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin: 10px 0;
+            font-size: 24px;
+        }
+        
+        .info {
+            background-color: var(--card-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .creator-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .creator-img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-color);
+        }
+        
+        .creator-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .rainbow-text {
+            background: linear-gradient(
+                to right, 
+                #ff0000, #ff7f00, #ffff00, #00ff00,
+                #0000ff, #4b0082, #9400d3
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 12px;
+            animation: rainbow 3s linear infinite;
+            background-size: 200% 100%;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        
+        .link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        
+        .room {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: var(--card-color);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s;
+        }
+        
+        .room:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .room img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid var(--border-color);
+            object-fit: cover;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+        
+        .rules {
+            background-color: var(--card-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid var(--border-color);
+        }
+        
+        .rules ul {
+            padding-left: 20px;
+        }
+        
+        .rules li {
+            margin-bottom: 8px;
+        }
+        
+        .rating {
+            color: var(--rating-color);
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        
+        .creator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        
+        .creator-info {
+            text-align: left;
+        }
+        
+        .creator-name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .creator-title {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .comment-section {
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        
+        .comment-toggle {
+            background: transparent;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            margin-bottom: 15px;
+        }
+        
+        .comment-container {
+            display: none;
+            margin-top: 15px;
+        }
+        
+        .comment {
+            background-color: var(--card-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        
+        .comment-badge {
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 4px;
+            margin-left: 5px;
+        }
+        
+        .comment-content {
+            margin-bottom: 10px;
+        }
+        
+        .comment-reactions {
+            display: flex;
+            gap: 10px;
+            font-size: 12px;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        
+        .comment-reaction {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        
+        .comment-disabled {
+            text-align: center;
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+        }
+    </style> 
+ </head> 
+ <body> 
+  <div class="container"> <!-- Settings Bar --> 
+   <div class="settings-bar"> 
+    <div class="theme-switch"> <span>🌙</span> <label class="switch"> <input type="checkbox" id="theme-toggle"> <span class="slider"></span> </label> <span>☀️</span> 
+    </div> 
+   </div> <!-- Header --> 
+   <div class="header"> 
+    <div class="profile-container"> 
+     <img src="https://i.imgur.com/8VoqbeV.jpeg" class="profile-img" alt="RCI Logo"> 
+    </div> 
+    <h1>Roblox Community Indonesia (RCI) 🇮🇩</h1> 
+    <p><em>Sopan • Damai • No Toxic • No Drama</em></p> 
+   </div> <!-- Group Info --> 
+   <div class="info"> 
+    <p><strong>🔹 Pembuat:</strong> Satria</p> 
+    <div class="creator-row"> 
+     <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-E84A416F4030F8CEFC60CFD02884F7B4-Png/150/150/AvatarHeadshot/Webp/noFilter" class="creator-img" alt="Creator"> 
+     <div class="creator-text"> <span>orangyasar_7</span> <span class="rainbow-text">Pemilik Community</span> 
+     </div> 
+    </div> 
+    <p><strong>🔹 Rating:</strong> <span class="rating">★★★★★</span> (5/5)</p> 
+    <p><strong>🔹 Admin:</strong> 3</p> 
+    <p><strong>🔹 Anggota Grup Utama:</strong> 34</p> 
+    <p><strong>🔹 Grup Dibuat Pada:</strong> 20/03/25</p> 
+    <p><strong>🔹 Anggota Community:</strong> 47</p>
+   </div> <!-- Rules --> 
+   <div class="rules"> 
+    <h2>📌 Deskripsi &amp; Peraturan Grup</h2> 
+    <p>Selamat datang di <strong>RCI</strong> – Komunitas Roblox Indonesia yang ramah, damai, dan penuh kreativitas! Kami berkomitmen untuk menjaga grup tetap <strong>sopan, bebas toxic, dan bebas drama</strong>. Mari saling menghargai, berbagi pengalaman, dan bermain bersama!</p> 
+    <p><strong>🚫 Peraturan Utama:</strong></p> 
+    <ul> 
+     <li>✔ No SARA, bullying, atau pertengkaran.</li> 
+     <li>✔ No spam/link random tanpa izin.</li> 
+     <li>✔ Diskusi tetap <strong>friendly &amp; bermanfaat</strong>.</li> 
+    </ul> 
+   </div> <!-- Main Links --> 
+   <h2>🌐 LINK RESMI GRUP</h2> 
+   <p>🔗 <a href="https://chat.whatsapp.com/BWiSkjF2QJX43MO0KTCfiI?mode=ac_t" class="link" target="_blank" id="main-link">Join Grup Utama RCI</a></p> 
+   <p>🔗 <a href="https://chat.whatsapp.com/KVUFFDesN6xITXLCiAZOU9?mode=ac_t" class="link" target="_blank" id="alt-link">Alternatif Link RCI</a></p> <!-- Community Rooms --> 
+   <h2>🎮 COMMUNITY ROOM RCI</h2> 
+   <p>Bergabunglah di sub-grup khusus kami:</p> 
+   <div class="room"> 
+    <img src="https://i.imgur.com/iNaNAT9.jpeg" alt="Admin Room"> 
+    <div class="room-info"> 
+     <div class="room-name">
+      👥 Admin Room
+     </div> <a href="https://chat.whatsapp.com/F74SZoCqzJD02A6cPmPCbF?mode=ac_t" class="link" target="_blank" id="admin-link">Join Admin Room</a> 
+    </div> 
+   </div> 
+   <div class="room"> 
+    <img src="https://i.imgur.com/xhOvlZb.jpeg" alt="Dev Room"> 
+    <div class="room-info"> 
+     <div class="room-name">
+      🔨 Developer Room
+     </div> <a href="https://chat.whatsapp.com/HTaU4RUxmMS0qc8qG0R8Na?mode=ac_t" class="link" target="_blank" id="dev-link">Join Dev Room</a> 
+    </div> 
+   </div> 
+   <div class="room"> 
+    <img src="https://i.imgur.com/04a4dyo.jpeg" alt="Call Room"> 
+    <div class="room-info"> 
+     <div class="room-name">
+      📞 Telepon Room
+     </div> <a href="https://chat.whatsapp.com/HqyyHksQIIe6WVQex7Ky9n?mode=ac_t" class="link" target="_blank" id="call-link">Join Telepon Room</a> 
+    </div> 
+   </div>
+   <!-- New Community Rooms -->
+   <div class="room"> 
+    <img src="https://i.imgur.com/r97RIsO.jpeg" alt="Info Mabar"> 
+    <div class="room-info"> 
+     <div class="room-name">
+      🎮 Info Mabar
+     </div> <a href="https://chat.whatsapp.com/JFTuSk8ByRYLgVVvgl05MO" class="link" target="_blank" id="mabar-link">Join Info Mabar</a> 
+    </div> 
+   </div>
+   <div class="room"> 
+    <img src="https://i.imgur.com/QllTeBa.jpeg" alt="Room GAG"> 
+    <div class="room-info"> 
+     <div class="room-name">
+      🌱 Room GAG
+     </div> <a href="https://chat.whatsapp.com/LC41LpDkhVoDvR4yqMcBmQ" class="link" target="_blank" id="gag-link">Join Room GAG</a> 
+    </div> 
+   </div> <!-- Creator Info --> 
+   <div class="creator"> 
+    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-C9B162D10891D6BC330EBBBD0618E728-Png/150/150/AvatarHeadshot/Webp/noFilter" class="creator-img" alt="Creator"> 
+    <div class="creator-info"> 
+     <div class="creator-name">
+      Lahiruupb
+     </div> 
+     <div class="creator-title">
+      Pembuat Halaman - <span class="rainbow-text">Admin Community</span>
+     </div> 
+    </div> 
+   </div> <!-- Comment Section --> 
+   <div class="comment-section"> <button class="comment-toggle" id="comment-toggle">Komentar (1)</button> 
+    <div class="comment-container" id="comment-container"> 
+     <div class="comment"> 
+      <div class="comment-header"> 
+       <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-C9B162D10891D6BC330EBBBD0618E728-Png/150/150/AvatarHeadshot/Webp/noFilter" class="creator-img" alt="Commenter"> <span class="comment-author">Lahiruupb</span> <span class="rainbow-text comment-badge">Admin</span> 
+      </div> 
+      <div class="comment-content">
+        Halo Ges 😏 
+      </div> 
+      <div class="comment-reactions"> 
+       <div class="comment-reaction">
+        🔥 69
+       </div> 
+       <div class="comment-reaction">
+        🗿 54
+       </div> 
+       <div class="comment-reaction">
+        😁 52
+       </div> 
+       <div class="comment-reaction">
+        😲 45
+       </div> 
+       <div class="comment-reaction">
+        👀 32
+       </div> 
+       <div class="comment-reaction">
+        👋 23
+       </div> 
+      </div> 
+     </div> 
+     <div class="comment-disabled">
+       Admin Menonaktifkan Komentar 
+     </div> 
+    </div> 
+   </div> <!-- Footer --> 
+   <div class="footer"> 
+    <p><small>Note: Jika link expired, hubungi admin. Laporkan anggota yang melanggar.</small></p> 
+   </div> 
+  </div> 
+  <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Check for saved theme preference or use preferred color scheme
+        const currentTheme = localStorage.getItem('theme') || 
+                            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        // Apply the current theme
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        
+        // Set the toggle position
+        if (currentTheme === 'light') {
+            themeToggle.checked = true;
+        }
+        
+        // Theme toggle event
+        themeToggle.addEventListener('change', function() {
+            let theme = 'dark';
+            if (this.checked) {
+                theme = 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+        
+        // Comment toggle
+        const commentToggle = document.getElementById('comment-toggle');
+        const commentContainer = document.getElementById('comment-container');
+        
+        commentToggle.addEventListener('click', function() {
+            if (commentContainer.style.display === 'none' || !commentContainer.style.display) {
+                commentContainer.style.display = 'block';
+                commentToggle.textContent = 'Sembunyikan Komentar';
+            } else {
+                commentContainer.style.display = 'none';
+                commentToggle.textContent = 'Komentar (1)';
+            }
+        });
+        
+        // Disable right-click on images
+        document.addEventListener('contextmenu', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+        
+        // Prevent image dragging
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+    </script> 
+ </body>
+</html>
